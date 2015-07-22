@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<style>
+
+#customers   tr:nth-child(even) {background: #f0f0f0;}
+#customers  tr:nth-child(odd) {background: #fff;}
+#customers1 tr:nth-child(even) {background: #f0f0f0;}
+#customers1 tr:nth-child(odd) {background: #fff}
+</style>
+<h1>Rango says...</h1>
+         <strong>{{ boldmessage }}</strong><br />
+<p>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<form action="{% url 'about' %}" method="post">
+    <label for="your_name">Enter the word to add </label>
+    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">{% csrf_token %}
+    <input type="submit" name="Positive" value="Positive">
+    <input type="submit" name="Negative" value="Negative">
+
+</form>
+<form action="/myapp/">
+    <input type="submit" value="Go  back">
+</form>
+</p>
+<table id="customers" border=2 align="left" >
+<tr>
+ <th>Positive</th>
+    {% for attr_head in data %}
+
+          <tr>
+
+               <td>{{attr_head}}</td>
+
+           </tr>
+
+    {% endfor %}
+</tr>
+</table>
+<table id="customers1" border=2 align="left" >
+<tr>
+<th>Negative</th>
+    {% for attr_head in data1 %}
+
+          <tr>
+
+               <td>{{attr_head}}</td>
+
+           </tr>
+
+    {% endfor %}
+</tr>
+
+
+
+</table>
+
+</body>
+</html>

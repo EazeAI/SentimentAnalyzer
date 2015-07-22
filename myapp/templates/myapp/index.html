@@ -7,6 +7,94 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<body>
+
+<style>
+
+#customers {
+    font-family: Arial;
+    width: 90%;
+    border-collapse: collapse;
+    border:0px;
+    padding:10px;
+    align:centre;
+}
+#container{
+
+
+    background-color:#f0f0f0;
+    }
+html, body{
+
+    background-color:#f0f0f0;
+    }
+#customers td, #customers th {
+    font-size: .9em;
+    border: 0px solid #98bf21;
+    padding: 3px 7px 2px 7px;
+}
+
+#customers th {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #FFB870;
+    color: #00000;
+}
+
+
+#customers tr:nth-child(even) {background: #FFFF}
+#customers tr:nth-child(odd) {background: #E0FFFF}
+    body {
+    background-color: white;
+}
+h1 {
+    color: maroon;
+    text-align:center;
+    font-size: 4em;
+    line-height:5px
+
+}
+h2{
+
+    text-align:center;
+    font-size:1em;
+
+    }
+    #headers{
+    background-color:blue;
+
+    }
+p.one{
+    font-size:1.2em;
+    background-color:#B2FFFF;
+    border: 1.5px solid
+    text-align:center;
+
+    }
+p{
+    padding-left:10px;
+    }
+p.two{
+    padding-left:10px;
+    }
+</style>
+<div id="container">
+
+<h1>
+    CentOne
+    </h1>
+<h2>
+   Version 1.0
+</h2>
+<p class="one">
+    <strong>Application Info:</strong><br>
+    The Applicaiton runs a Analysis on the feedback and gives back a Sentiment Value<br>
+
+
+</p>
 <form action="{% url 'index' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
 
 <input type="file" name="csv_file" />
@@ -14,15 +102,19 @@
     </form>
 <p>
 <form action="{% url 'index' %}" method="post">
-    <label for="your_name">Enter Row to Analyse </label>
+    <p class="two">
+    <label for="your_name"><strong>Enter the column to Analyse</strong></label>
     <input id="your_name" type="text" name="your_name" value="{{ current_name }}">{% csrf_token %}
-    <input type="submit" value="OK">
+    <input type="submit" value="Analyse">
+    </p>
 </form>
 </p>
-
-
+ <p> <strong>Add a new word or phrase in the dictionary </strong><br />
+        <a href="/myapp/about/">Dictionary</a><br />
+</p>
 <div id="dvData">
-<table border=2>
+
+<table id="customers" border=2 align="center">
 <tr>
 
     {% for attr_head in data %}
@@ -47,9 +139,11 @@
 
 
 </table>
+
     <a href="#" class="export">Export Table data into Excel</a>
 
 </div>
+    </div>
 <script>
 $(document).ready(function () {
 
