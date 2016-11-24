@@ -1,2 +1,14 @@
 # Sentiment-Analysis
-Django framework Based Sentiment Analysis Application
+Sentiment Analysis is an AI way of opinion mining from textual content by identifying and extracting subjective information. Sentiment analysis is widely applied to reviews and social media for a variety of applications, ranging from marketing to customer service.
+
+"The process of computationally identifying and categorizing opinions expressed in a piece of text, especially in order to determine whether the writer's attitude towards a particular topic, product, etc. is positive, negative, or neutral" 
+
+Problem Statement:
+In the age of IT industry ,the feedback of one's service or products plays a vital role for delivering a better ,faster solution and retaining the customer base. This feedback lets us know whether the customer is satisfied with us or is in need of improvements etc. Handling the response from a single client /customer is easy, but if the scale of the business is large and the customer base is huge the amount of feedback generated makes it difficult to process and analyze manually .This is where we bring Sentiment Analysis to play.
+ 
+Solution:
+ 
+Sentiment Analysis on the feedback given by customers/clients gives us a immediate picture of our service/product utilization. This basically employs a Language processing and Sentence analysis on the text provided .So if there is huge amount comments given out by various customers and  need to get them in order of positive  and negative responses with a severity of the response , feed the data to the tool and get respective results. The tool uses Natural Language Processing techniques on the data and groups it, the dictionary which is trained for specific tags look into the grouped data to identify them, the algorithm assigns the Sentiment value based on the identified tags. The above process would be easy if we simply had check boxes (involving good, bad, etc.) but as is in the case of large scale business units, the comments are more specific, complex and project related, simple grouping of them would be difficult. This is where the Sentiment Analysis Tool comes into play. The accuracy of the tool depends on how well the dictionary is trained
+ 
+A PoC has been developed to do the same .It is a browser based application. It takes a csv file containing feedback as input, the column which is to be analyzed is fed to our tool which is deployed on a server. The tool returns the sentiment value (range -1(negative peak) to 1(positive peak)) of each cell of the column inputted. The response can be downloaded as csv .A provision to train the tool's dictionary to understand various project related terms and get an efficient response is also provided.Joint collobration with GSPM team(Global Survey Program Management) under CE in GIS is underway to deploy the application on cloud.
+A demonstration can be shown to interested parties
